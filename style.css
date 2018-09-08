@@ -8,13 +8,15 @@
     font-size: calc(0.5em + 1vw);
 }
 
-*, 
-::before, 
+
+*,
+::before,
 ::after {
     box-sizing: inherit;
 }
 
 .big-container {
+    padding-top:1rem ;
     width: 90%;
     margin: auto;
 }
@@ -42,7 +44,7 @@ header div {
     color:#7f888f;
 }
 
-i {
+header i {
     display: inline-block;
     margin: 1em;
 }
@@ -51,20 +53,20 @@ i {
     justify-content: flex-end;
     align-items: center;
 }
-
 .html {
+
     text-transform: uppercase;
 }
 
 article {
-    font-family: 'Roboto', sans-serif;
+    font-family: var(--font);
     color: #7f888f;
 }
 
 button {
     text-transform: uppercase;
     border: none;
-    padding: 1em 10em; 
+    padding: 1em 10em;
 }
 
 .border-orange {
@@ -78,7 +80,7 @@ button {
     color: white;
 }
 
-.container {
+.main-section {
     border-top: 3px solid  #f56a6a;
     border-bottom: 1px solid #7f888f;
     padding: 2em 0;
@@ -86,28 +88,38 @@ button {
 
 }
 
-.container img {
+.main-section img {
     padding: 0 1em;
     flex: 1;
     order: 2;
 }
 
-.container article {
+.main-section article {
     flex: 2;
     order: 1;
 }
+
+ *[class*="-section"] {
+   font-family: 'Roboto', sans-serif;
+ }
 
 section[class*="article-"] {
     padding: 0.3em;
 }
 
 article .article-header h1 {
-    width: 50%;
+    width: 70%;
     font-size: 2rem;
     margin-bottom: 0.8em;
     color: black;
     text-transform: capitalize;
 }
+
+article .article-header h2 {
+  font-weight: lighter;
+  text-transform: uppercase;
+}
+
 
 article .article-header h2 {
     font-size: 1rem;
@@ -125,12 +137,45 @@ article .article-footer button {
 .sections {
     display: grid;
     grid-template: 50% 50%/50% 50%;
+    margin-bottom: 3em;
 }
 
-.sections div {
-    display: flex;
+.sections > div {
+  padding: 2em;
+  display: flex;
 }
 
 .sections div div{
-    flex: 1;
+    flex: 2;
+}
+
+.sections div  i {
+  flex:1;
+}
+
+.title-section {
+  height: 15vh;
+}
+
+.title-section h1 {
+  padding: 1em 0;
+  text-transform: capitalize;
+  font-size: 1.2em;
+  display: inline-block;
+  border-bottom: 4px solid #f56a6a;
+}
+
+.grid-item i {
+  font-size: 3rem;
+  color: #f56a6a;
+}
+
+.grid-item div h2 {
+  font-size: 0.8em;
+}
+
+.grid-item div p {
+  color: #7f888f;
+  margin-top: 0.3em;
+  font-size: 0.6em;
 }
